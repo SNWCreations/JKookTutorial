@@ -1,0 +1,5 @@
+name: ExampleBot
+version: 0.1.0
+api-version: 0.39.3
+authors: ["SNWCreations"]
+main: snw.jkook.example.Main
