@@ -5,7 +5,7 @@ import snw.jkook.plugin.BasePlugin;
 public class Main extends BasePlugin {
 
     @Override
-    public void onEnable() /* 2 */ {
+    public void onEnable() {
         new JKookCommand("eg")
             // Old register method from API 0.37:
             // .setExecutor((sender, args, msg) -> {
@@ -16,4 +16,5 @@ public class Main extends BasePlugin {
             })
             .register(this);
     }
+
 }
