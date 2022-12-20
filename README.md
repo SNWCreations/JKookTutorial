@@ -54,7 +54,7 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 1 - Hello World!](ch_1/README.md)
 
-Chapter 2 - 命令系统初步
+Chapter 2 - 命令系统概述
 
 Chapter 3 - 事件系统概述
 
