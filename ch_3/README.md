@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 3
 
 命令是 Bot 和用户的重要交流渠道。
 
