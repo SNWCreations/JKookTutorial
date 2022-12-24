@@ -14,6 +14,8 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 
 ## 有用的信息
 
+[KOOK 官方开发者服务器](https://kook.top/cwznfo)
+
 [JKook 开发者服务器](https://kook.top/aecCr6)
 
 有问题就来这问问吧！
