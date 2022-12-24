@@ -26,7 +26,7 @@
 
 也可以在本页面单击空白处，按下键盘上的 `.` 键，即可在 Github.dev 在线编辑器中打开本仓库。**但是仅能读，不能编译运行示例。** 点击 [本链接](https://github.dev/SNWCreations/JKookTutorial) 也可以直接跳转。
 
-运行示例请自行准备一个 Bot Token ，如果你不知道怎么获取，去 [KOOK 开发者中心服务器](https://kook.top/cwznfo) 问问吧，大家会为你解答的。
+运行示例请自行准备一个 Bot Token ，如果你不知道怎么获取，[看看这篇教程](Get_Bot_Token.md)。
 
 ## 环境要求
 
@@ -56,7 +56,7 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 1 - Hello World!](ch_1/README.md)
 
-Chapter 2 - 配置文件
+[Chapter 2 - 配置文件](ch_2/README.md)
 
 Chapter 3 - 命令系统概述
 
