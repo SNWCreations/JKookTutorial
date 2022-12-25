@@ -60,11 +60,17 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 Chapter 3 - 命令系统概述
 
-Chapter 4 - 事件系统概述
+Chapter 4 - 实体体系概述
 
-Chapter 5 - HTTP API
+Chapter 5 - 消息体系概述
 
-Chapter 6 - 任务调度系统
+Chapter 6 - 事件体系概述
+
+Chapter 7 - 任务调度系统
+
+Chapter 8 - 其余类概述
+
+Chapter 9 - 终章！动手实践！
 
 ## 贡献
 
