@@ -36,7 +36,6 @@
 
 * OpenJDK 8
 * Apache Maven 3.8
-* KookBC 0.17
 
 是的，我们使用 Maven 。Gradle 也十分优秀，但是...
 
