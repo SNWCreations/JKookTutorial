@@ -1,5 +1,7 @@
 package snw.jkook.example;
 
+import snw.jkook.command.JKookCommand;
+import snw.jkook.message.component.TextComponent;
 import snw.jkook.plugin.BasePlugin;
 
 public class Main extends BasePlugin {
@@ -11,8 +13,8 @@ public class Main extends BasePlugin {
             // .setExecutor((sender, args, msg) -> {
             //     msg.reply("Hi!");
             // })
-            .setUserExecutor((user, args, msg) -> {
-                msg.reply("Hi!");
+            .executesUser((user, args, msg) -> {
+                msg.reply(new TextComponent("Hi!"));
             })
             .register(this);
     }
