@@ -20,7 +20,7 @@
 
 「机器人连接模式」请保持为「websocket」。这个连接模式便于你在你的设备上调试你的机器人，在你的机器人用户量不大时很推荐。
 
-本教程不会讲 Webhook 模式的使用。如果你是 KookBC (一个 JKook API 的标准实现) 的用户，并且需要此模式，可以看 [KookBC 与 Webhook](https://github.com/SNWCreations/KookBC/blob/main/docs/Embedding_KookBC.md) 配置文档。
+本教程不会讲 Webhook 模式的使用。如果你是 KookBC (一个 JKook API 的标准实现) 的用户，并且需要此模式，可以看 [KookBC 与 Webhook](https://github.com/SNWCreations/KookBC/blob/main/docs/KookBC_with_Webhook.md) 配置文档。
 
 「Token」是机器人的身份凭证，请不要:
 
