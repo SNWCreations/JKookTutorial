@@ -6,6 +6,48 @@
 
 本章，我们将介绍 JKook API 的命令系统用法。
 
-注意，本章基于两个大版本编写: [0.37 LTS](0.37.md), [0.39](0.39.md) 。
+本章基于两个 API 大版本编写: 0.37 LTS, 0.42 LTS 。
 
-请按需选择文档，我们将在以上的两份文档中阐述不同版本的命令系统。
+两个版本之间不同的部分将在下文提及。
+
+本章的代码示例基于 API 0.42 编写。
+
+请在读完本文后再阅读示例代码。
+
+## 总纲
+
+JKook API 命令系统相关的类均可以在 `snw.jkook.command` 包中找到。
+
+此包的结构如下:
+
+```text
+snw.jkook
+|
++---command
+       JKookCommand
+       CommandException
+       CommandExecutor
+       CommandManager
+       CommandSender
+       ConsoleCommandSender
+       ConsoleCommandExecutor (自 API 0.38 开始)
+       OptionalArgumentContainer (自 API 0.38 开始)
+       UserCommandExecutor (自 API 0.38 开始)
+```
+
+下文将一一解释这些类。
+
+## JKookCommand
+
+这是 JKook API 命令系统的核心类。
+
+表示一个命令。
+
+在 JKook API 命令系统中，一个命令可以拥有如下属性：
+* 名称
+* 别称
+* 前缀
+* 简介
+* 帮助信息
+* 执行器
+* 参数类型 (自 API 0.38 开始)
