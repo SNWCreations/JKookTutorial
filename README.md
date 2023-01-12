@@ -57,19 +57,21 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 2 - 配置文件](ch_2/README.md)
 
-Chapter 3 - 命令系统概述
+Chapter 3 - 再看 Plugin
 
-Chapter 4 - 实体体系概述
+Chapter 4 - 命令系统概述
 
-Chapter 5 - 消息体系概述
+Chapter 5 - 实体体系概述
 
-Chapter 6 - 事件体系概述
+Chapter 6 - 消息体系概述
 
-Chapter 7 - 任务调度系统
+Chapter 7 - 事件体系概述
 
-Chapter 8 - 其余类概述
+Chapter 8 - 任务调度系统
 
-Chapter 9 - 终章！动手实践！
+Chapter 9 - 其余类概述
+
+Chapter 10 - 终章！动手实践！
 
 ## 贡献
 
