@@ -28,12 +28,16 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 
 ## JKook 插件开发中常用的类、方法
 
+本节不讲解以下提及的类与方法，只希望你能在示例代码中看见它们时知道它们是什么，本教程会有专门的章节详细讲解它们。
+
 你会在后面的教程的示例代码中经常看见本小节提到的类和方法的。
 
 `snw.jkook.Core` - 作为所有 JKook API 服务组件的提供者
 
 `snw.jkook.JKook` - 存放一个 `Core` 的实例，相当于 `Core` 的单例模式封装
 * 在 API 0.38+ 下更推荐通过 `snw.jkook.plugin.Plugin#getCore` 方法获取 `Core` 的实例进而调用
+
+`snw.jkook.plugin.Plugin` - 表示一个插件
 
 `snw.jkook.plugin.BasePlugin` - `snw.jkook.plugin.Plugin` 接口的一个可用实现，遵循 [JKook 插件格式规范](https://github.com/SNWCreations/JKook/wiki/Plugin-Format) 。推荐插件开发者直接继承此类作为插件的主类。
 
@@ -42,3 +46,7 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 `snw.jkook.scheduler.Scheduler` - 任务调度器，对此类的详细讲解详见第 7 章
 
 `snw.jkook.plugin.Plugin#getLogger` - 获取插件的日志记录器
+
+`snw.jkook.entity.User` - 用户对象，对此类的详细讲解详见第 4 章
+
+`snw.jkook.entity.Guild` - 服务器对象，对此类的详细讲解详见第 4 章
