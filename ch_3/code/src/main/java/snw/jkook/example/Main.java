@@ -31,10 +31,10 @@ public class Main extends BasePlugin {
                 // The sender type is CommandSender, so it might be a User or ConsoleCommandSender.
                 // So you need to write (if-else + instanceof) statements to know the sender.
                 // For users, you need to cast them into User manually.
-                // so we added executeUser and executeConsole to prevent this problem in API 0.38
+                // so we added executeUser and executeConsole to prevent this problem.
                 // Tips: The CommandExecutor won't be executed if the command have a UserCommandExecutor
-                // and the executor is User, or the command have a ConsoleCommandExecutor and the sender is
-                // ConsoleCommandSender.
+                // and the executor is User, or the command have a ConsoleCommandExecutor
+                // and the sender is ConsoleCommandSender.
                 // This is just for the backwards compatibility.
                 // Actually, it is deprecated.
                 .setExecutor((sender, arguments, message) -> {
