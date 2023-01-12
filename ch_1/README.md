@@ -42,6 +42,39 @@ onLoad 方法在插件被加载后，启用前调用。
 
 ---
 
+## 配置 KookBC 以用于调试
+
+KookBC 是一个主要由 JKook API 作者 ZX夏夜之风 开发并维护的 JKook API 实现。
+
+KookBC 提供了完整的 JKook API 功能实现。
+
+请自行准备 Java 运行时环境(JRE，Java Runtime Environment)。一般情况下使用 Java 8 即可。
+
+若插件使用了更高版本的 Java API ，则请准备插件所用的 Java 所对应的运行时环境。
+
+若多个插件均使用了不同的 Java 版本，取其中的最高版本作为使用的 Java 运行时环境的版本。
+
+对于开发者，请安装 JDK ，而不是仅安装 JRE 。JDK 中包含 JRE 。
+
+Java 运行时环境可以在以下地址下载:
+* [清华大学开源软件镜像站 - Eclipse Adoptium OpenJDK](https://mirror.tuna.tsinghua.edu.cn/Adoptium)
+
+具体的安装过程此处不再赘述。
+
+请打开 [KookBC Releases](https://github.com/SNWCreations/KookBC/releases) 页面，下载你需要的 KookBC 版本。
+
+JKook API 0.37.x 对应 KookBC 0.17.x 。
+
+JKook API 0.42.x 对应 KookBC 0.20.x 。
+
+下载对应版本的最新版本，以保证得到最新的漏洞修补。
+
+下载好后，在一个你认为合适的地方新建文件夹(路径尽量纯英文)，将 KookBC 放入。
+
+接下来的部分可以参照 [KookBC 仓库主页](https://github.com/SNWCreations/KookBC) 的 README 操作。
+
+---
+
 至此，本章内容结束了。
 
 本章我们了解了 JKook 插件的声明。
