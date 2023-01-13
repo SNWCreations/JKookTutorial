@@ -1,0 +1,1 @@
+This is an example for telling you how to use Plugin#saveResource (or Plugin#getResource) method.

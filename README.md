@@ -59,7 +59,7 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 2 - 配置文件](ch_2/README.md)
 
-Chapter 3 - 再看 Plugin
+[Chapter 3 - 再看 Plugin](ch_3/README.md)
 
 Chapter 4 - 命令系统概述
 
