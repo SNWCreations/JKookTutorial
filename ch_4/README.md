@@ -89,6 +89,10 @@ public final class JKookCommand {
 
 ### 前缀
 
+前缀有助于将用户的正常发言与命令区分开。
+
+比如 `查询什么呢？` 在一般人看来就是一个简单的问题，但是如果一个命令就是 `查询什么呢？` ？这会影响用户体验。
+
 前缀不仅可以通过构造方法指定，也可以通过 `JKookCommand#addPrefix` 方法添加。
 
 对于以下两段代码:
@@ -141,7 +145,7 @@ new JKookCommand("eg")
 
 执行器将在下文详细讲解，详见 [执行器](#执行器) 一节。
 
-一个完整的 JKookCommand 的使用实例可以在本章的示例代码中找到。
+一个简单的 JKookCommand 可以在本章的示例代码的第 1 处找到。
 
 ## 执行器
 
@@ -186,7 +190,7 @@ public interface CommandExecutor {
 
 最重要的是，很多时候，命令都是直接由 KOOK 用户执行的，仅控制台可用的命令较少。
 
-所以，为了解决这个问题，我们引入了 `UserCommandExecutor` 和 `ConsoleCommandExecutor` ，下文将详细讲解。
+所以，为了解决这个问题，我们引入了 `UserCommandExecutor` 和 `ConsoleCommandExecutor` ，下文将作讲解。
 
 ### UserCommandExecutor
 
@@ -200,8 +204,113 @@ public interface CommandExecutor {
 
 为一个命令对象设置 `ConsoleCommandExecutor` 可以调用 `JKookCommand#executesConsole` 方法。
 
+## 子命令
+
+对于一个命令对象，其可以有无数个不重名的子命令。
+
+子命令的前缀将被忽略。
+
+对一个命令注册子命令，调用其对象的 `addSubcommand` ，将子命令对象传入即可。
+
+你可以嵌套子命令，如:
+
+```java
+new JKookCommand("eg")
+        .addSubcommand(
+                new JKookCommand("sub")
+                        .addSubcommand(
+                                new JKookCommand("anothersub")
+                                // subcommand code here
+                        )
+        )
+        // more command code
+```
+
+调用其中的 `anothersub` 命令只需要执行 `/eg sub anothersub` 即可。
+
+一个简单的子命令示例可以在本章的示例代码的第 2 处找到。
+
 ## 参数解析系统
 
 **本节的内容需要 JKook API 版本为 0.38+ 。**
 
-TODO
+我相信 `String[]` 作为存放参数的容器对于复杂的命令是很不友好的，因为对于命令中的标准数据类型需要你自行调用相关的方法进行解析。
+
+所以我们在高版本 API 引入了参数解析系统。
+
+此系统中的核心方法有如下三个:
+* `snw.jkook.command.JKookCommand#addArgument`
+* `snw.jkook.command.JKookCommand#addOptionalArgument`
+* `snw.jkook.command.CommandManager#registerArgumentParser`
+
+一个简单的参数解析系统的使用示例可以在本章的示例代码的第 3 处找到。
+
+### JKookCommand#addArgument
+
+此方法用于向你的命令对象增加一个必选参数。
+
+当执行命令前无法解析出参数的内容时，命令将被拒绝执行。
+
+其方法签名如下:
+
+```java
+public final class JKookCommand {
+    public JKookCommand addArgument(Class<?> cls) {
+        // 具体实现已忽略
+    }
+}
+```
+
+要求传入一个参数的具体类型，若此类型不受支持将会抛出异常。
+
+**传入的类型不可以是 `java.lang.Object` 的 `Class` 对象。**
+
+### JKookCommand#addOptionalArgument
+
+此方法用于向你的命令对象增加一个可选参数。
+
+当执行命令前无法解析出参数的内容时，将向命令执行器传入提供的默认值。
+
+其方法签名如下:
+
+```java
+public final class JKookCommand {
+    public <T> JKookCommand addOptionalArgument(Class<T> cls, T defaultValue) {
+        // 具体实现已忽略
+    }
+}
+```
+
+要求传入一个参数的具体类型以及一个与传入的类型所对应的对象作为默认值，若此类型不受支持将会抛出异常。
+
+**传入的类型不可以是 `java.lang.Object` 的 `Class` 对象。**
+
+### CommandManager#registerArgumentParser
+
+此方法用于注册一个参数解析器。
+
+**请一定要在注册命令前注册自定义的参数解析器！**
+
+一个 JKook API 的实现默认提供以下类型的解析器:
+```text
+int 及其包装器类型 java.lang.Integer
+double 及其包装器类型 java.lang.Double
+boolean 及其包装器类型 java.lang.Boolean
+String
+snw.jkook.entity.User
+snw.jkook.entity.TextChannel
+```
+
+为什么没有 `float` 的？
+
+可以用 `double` 类型替代。或者你可以自行注册一个。
+
+`User` 的解析器通过解析 [KMarkdown](https://developer.kookapp.cn/doc/kmarkdown) 中的 `(met)` 标签实现。它在 KOOK 客户端中的表现是 `@某人` 。
+
+`TextChannel` 的解析器通过解析 [KMarkdown](https://developer.kookapp.cn/docs/kmarkdown) 中的 `(chn)` 标签实现。它在 KOOK 客户端中的表现是 `#某频道` 。
+
+---
+
+本章我们讲解了 JKook API 的命令系统。
+
+新的命令系统也是新版本 API 的亮点，希望新的命令系统能帮助你更优雅的写代码！

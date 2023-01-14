@@ -10,6 +10,7 @@ public class Main extends BasePlugin {
 
     @Override
     public void onEnable() {
+        /* 1 */
         // "eg" is the root name of the command.
         // In this example, the command prefix is "/" (default value)
         // So you can execute this command by sending a message which the content is "/eg" in KOOK.
@@ -67,6 +68,7 @@ public class Main extends BasePlugin {
                 //
                 // WARNING: THE ATTRIBUTES OF THE COMMAND CANNOT BE EDITED AFTER IT REGISTERED.
 
+        /* 2 */
         new JKookCommand("greet")
                 // You can add many subcommands by using addSubcommand method.
                 .addSubcommand(
@@ -88,6 +90,8 @@ public class Main extends BasePlugin {
                 )
                 .register(this);
 
+        /* 3 */
+        // The following command can only be registered on JKook API 0.38+.
         new JKookCommand("arg")
                 // You can specify the command argument type by using addArgument method.
                 // Java standard data types are supported by default.
