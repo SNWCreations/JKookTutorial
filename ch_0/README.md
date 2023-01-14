@@ -12,6 +12,8 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 
 它是以 Bukkit API 为原型设计的。因此，若你曾开发过 Bukkit 插件，JKook 对你会很友好。
 
+没学过 Bukkit ？没关系，本教程也不需要你刻意学过 Bukkit 。放轻松。
+
 ## 有用的信息
 
 [KOOK 官方开发者服务器](https://kook.top/cwznfo)
