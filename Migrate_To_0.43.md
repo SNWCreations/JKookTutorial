@@ -24,7 +24,7 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 3. `JKookCommand#register` 方法在新版本中需要 `Plugin` 作为参数，但是旧版本不需要。
 
-4. `CommandExecutor`，`UserCommandExecutor`，`ConsoleCommandExecutor` 中 `onCommand` 方法的 `arguments` 参数类型从 `String[]` 变成了 `Object[]` ，关于此变动的详细讲解，见本教程[第 4 章 - 参数解析系统](ch_4/README.md#参数解析系统)。
+4. `CommandExecutor`，`UserCommandExecutor`，`ConsoleCommandExecutor` 中 `onCommand` 方法的 `arguments` 参数类型从 `String[]` 变成了 `Object[]` ，关于此变动的详细讲解，见本教程[第 6 章 - 参数解析系统](ch_6/README.md#参数解析系统)。
 
 
 ## 如何迁移？
@@ -88,7 +88,7 @@ public class Command implements UserCommandExecutor {
 
 既然迁移到了新版本，为什么不用新的命令系统？
 
-关于新的参数系统，请见本教程[第 4 章 - 参数解析系统](ch_4/README.md#参数解析系统)。
+关于新的参数系统，请见本教程[第 4 章 - 参数解析系统](ch_6/README.md#参数解析系统)。
 
 举个例子。
 

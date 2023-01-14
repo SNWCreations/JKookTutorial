@@ -43,12 +43,12 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 
 `snw.jkook.plugin.BasePlugin` - `snw.jkook.plugin.Plugin` 接口的一个可用实现，遵循 [JKook 插件格式规范](https://github.com/SNWCreations/JKook/wiki/Plugin-Format) 。推荐插件开发者直接继承此类作为插件的主类。
 
-`snw.jkook.command.JKookCommand` - 表示一个命令，对此类的详细讲解详见第 4 章
+`snw.jkook.command.JKookCommand` - 表示一个命令，对此类的详细讲解详见第 6 章
 
 `snw.jkook.scheduler.Scheduler` - 任务调度器，对此类的详细讲解详见第 8 章
 
 `snw.jkook.plugin.Plugin#getLogger` - 获取插件的日志记录器
 
-`snw.jkook.entity.User` - 用户对象，对此类的详细讲解详见第 5 章
+`snw.jkook.entity.User` - 用户对象，对此类的详细讲解详见第 4 章
 
-`snw.jkook.entity.Guild` - 服务器对象，对此类的详细讲解详见第 5 章
+`snw.jkook.entity.Guild` - 服务器对象，对此类的详细讲解详见第 4 章
