@@ -126,3 +126,31 @@ _~~也许你可以利用这个系统制作一个可以培养好感度的机器�
 表示一个服务器，是 KOOK 软件中用户交流与管理的主要渠道。
 
 TODO
+
+#### Role
+
+TODO
+
+#### Invitation
+
+TODO
+
+### Channel
+
+TODO
+
+#### TextChannel
+
+TODO
+
+#### VoiceChannel
+
+TODO
+
+### CustomEmoji
+
+TODO
+
+### Reaction
+
+TODO
