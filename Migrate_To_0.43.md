@@ -44,7 +44,7 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 #### 只做兼容
 
-在你完成上文的修改后，若你的 `JKookCommand` 未使用 `addArgument` 方法以及 `addOptionalArgument` 方法，你可以使用以下方案。
+在你完成上文的修改后，若你的 `JKookCommand` 不打算使用新 API 中的参数解析系统，你可以使用以下方案。
 
 你可以按如下方法修改你的命令执行器:
 
@@ -68,13 +68,22 @@ public class Command implements UserCommandExecutor {
 
     @Override
     public void onCommand(CommandSender sender, Object[] arguments, @Nullable Message message) {
-        onCommand0(sender, ((String[]) arguments), message);
+        onCommand0(sender, toStringArray(arguments), message);
     }
     
     private void onCommand0(CommandSender sender, String[] arguments, @Nullable Message message) {
         // command code
     }
 
+    // 此方法可以提取到一个单独的类，它只是实用方法
+    public static String[] toStringArray(Object[] array) {
+        String[] result = new String[array.length];
+        int i = 0;
+        for (Object obj : array) {
+            result[i++] = obj.toString();
+        }
+        return result;
+    }
 }
 ```
 
