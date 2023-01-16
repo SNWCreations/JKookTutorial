@@ -282,12 +282,18 @@ public interface Channel {
 
     void updatePermission(User user, int rawAllow, int rawDeny);
 
+    void deletePermission(Role role);
+
+    void deletePermission(User user);
+
     // ...
 
 }
 ```
 
-前两个是对角色设置特定于频道的权限，最后一个是对用户设置特定于频道的权限。
+前两个是对角色设置特定于频道的权限，第三个是对用户设置特定于频道的权限。
+
+最后两个是删除频道上指定角色/用户的特定于频道的权限。
 
 ### CustomEmoji
 
