@@ -235,9 +235,26 @@ public interface InviteHolder {
 
 获取一些常规属性的方法（如名称对应 `getName` 方法，ID 对应 `getId` 方法）这里就不多讲了。
 
+`Channel#getParent` 方法可以获取频道的父分组频道对象。
+* 有对应的 `Channel#setParent` 方法可以修改。
+
 #### Category
 
-TODO
+完整限定名为 `snw.jkook.entity.channel.Category` 。
+
+表示一个分组。
+
+分组是什么？
+
+![](images/5.png)
+
+图中箭头所指的就是一个分组。
+
+**关于分组有一个特性：对分组设置的[特定于频道的权限](#特定于频道的权限)会对其下属的所有频道生效。除非频道的权限不与分组同步。**
+
+![](images/6.png)
+
+**另外注意，来自 `InviteHolder` 接口的方法以及 `Channel#getParent`、`Channel#setParent` 方法在 `Category` 接口中不可用。**
 
 #### TextChannel
 
