@@ -229,6 +229,14 @@ public interface InviteHolder {
 
 ### Channel
 
+完整限定名为 `snw.jkook.entity.channel.Channel` 。
+
+表示一个频道。
+
+获取一些常规属性的方法（如名称对应 `getName` 方法，ID 对应 `getId` 方法）这里就不多讲了。
+
+#### Category
+
 TODO
 
 #### TextChannel
@@ -238,6 +246,48 @@ TODO
 #### VoiceChannel
 
 TODO
+
+#### 特定于频道的权限
+
+一个角色的权限适用于整个服务器的所有频道。
+
+但是通过为特定频道给特定角色/用户设置权限，可以给这些被特别对待的角色/用户在特定的频道本没有的权限。
+
+举个例子。
+
+用户 A 有角色 B 。
+
+有一个频道需要有角色 C 的用户才能访问。
+
+但是管理员可以在这个频道上特别设置用户 A 的权限，使其可以访问这个频道。
+
+再举一个例子。
+
+有一个文字频道，所有人都不能在那里上传文件。
+
+但是管理员可以特别让有角色 D 的用户可以在这里上传文件。
+
+我们将这称之为特定于频道的权限。
+
+在 `Channel` 接口中，有如下方法可以操作特定于频道的权限。
+
+```java
+public interface Channel {
+
+    // ...
+
+    void updatePermission(int roleId, int rawAllow, int rawDeny);
+
+    void updatePermission(Role role, int rawAllow, int rawDeny);
+
+    void updatePermission(User user, int rawAllow, int rawDeny);
+
+    // ...
+
+}
+```
+
+前两个是对角色设置特定于频道的权限，最后一个是对用户设置特定于频道的权限。
 
 ### CustomEmoji
 
