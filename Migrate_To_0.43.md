@@ -73,6 +73,10 @@ public class Command implements UserCommandExecutor {
     @Override
     public void onCommand(CommandSender sender, Object[] arguments, @Nullable Message message) {
         onCommand0(sender, toStringArray(arguments), message);
+        // 也可以使用
+        // onCommand0(sender, (String[]) arguments, message);
+        // 但这可能在一些 API 实现中不工作，谁知道呢？
+        // 前者方法更安全。
     }
     
     private void onCommand0(CommandSender sender, String[] arguments, @Nullable Message message) {
