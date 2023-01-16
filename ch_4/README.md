@@ -7,6 +7,9 @@
 JKook API 将对于 KOOK 软件中的"实体"及其附属内容的抽象放在 `snw.jkook.entity` 包。
 * 其实**用户发送的消息也算是一种实体**，但是在 API 早期开发阶段的时候，我们发现消息包中的 CardMessage 部分的包名过长(当时是诸如 `snw.jkook.entity.message.component.card.structure` 的名称)，故从实体包 `snw.jkook.entity` 移动到了根包 `snw.jkook` 。~~虽然还是很长，但聊胜于无。~~
 
+**本章没有示例代码。**
+因为获取一个实体需要具体的 ID 。我们无法提供一个具体 ID 给你用作测试。
+
 ---
 
 先总览包结构。
