@@ -5,7 +5,7 @@
 实体 (英文 `Entity`) 一词借鉴于游戏 Minecraft ，这里表示一个可以产生交互的对象。
 
 JKook API 将对于 KOOK 软件中的"实体"及其附属内容的抽象放在 `snw.jkook.entity` 包。
-* 其实**用户发送的消息也算是一种实体**，但是在 API 早期开发阶段的时候，我们发现消息包中的 CardMessage 部分的包名过长(当时是诸如 `snw.jkook.entity.message.component.card.structure` 的名称)，故从实体包 `snw.jkook.entity` 移动到了根包 `snw.jkook` 。
+* 其实**用户发送的消息也算是一种实体**，但是在 API 早期开发阶段的时候，我们发现消息包中的 CardMessage 部分的包名过长(当时是诸如 `snw.jkook.entity.message.component.card.structure` 的名称)，故从实体包 `snw.jkook.entity` 移动到了根包 `snw.jkook` 。~~虽然还是很长，但聊胜于无。~~
 
 ---
 
@@ -125,15 +125,107 @@ _~~也许你可以利用这个系统制作一个可以培养好感度的机器�
 
 表示一个服务器，是 KOOK 软件中用户交流与管理的主要渠道。
 
-TODO
+#### Permission
+
+完整限定名为 `snw.jkook.Permission` 。
+
+对一个服务器进行一些操作会需要机器人拥有特定的权限。
+
+> 权限是一个 unsigned int 值，由比特位代表是否拥有对应的权限。
+> 
+> 权限值与对应比特位进行按位与操作，判断是否拥有该权限。
+> 
+> --- [KOOK 开发者文档](https://developer.kookapp.cn/doc/http/guild-role)
+
+而此枚举存放 KOOK 中各种服务器权限的值。
+
+你会在对角色的操作时用到它们。
+
+Tips: 有一个注解，叫 `snw.jkook.util.RequirePermission` ，它会和 `Permission` 的枚举对象一起出现在一些方法上，作用是提醒你这个方法需要特定权限。
 
 #### Role
 
-TODO
+**对 `Role` 进行任何操作的前提是你的机器人在角色对应服务器中有角色管理的权限。**
 
-#### Invitation
+完整限定名为 `snw.jkook.entity.Role` 。
 
-TODO
+表示一个服务器中的一个角色。可以为不同的角色配置不同的权限，以实现权限管理的功能。
+
+可以通过 `User#grantRole` 和 `User#revokeRole` 方法实现用户角色的授予与剥夺。
+
+在一个服务器中新建一个角色？调用 `Guild#createRole` 方法。
+
+获取一个服务器已有的所有角色？调用 `Guild#getRoles` 方法。
+
+你可以通过 `Role#isPermissionSet` 方法检查此角色是否有特定权限。
+
+#### Invitation & InviteHolder
+
+一个服务器里人太少了怎么办？邀请一些你的朋友！
+
+这里讲解 JKook 对于 "邀请" 这一过程中的一些东西是如何抽象的。
+
+首先，在 KOOK 中，邀请一个人到一个服务器/频道的方式是向 TA 发送邀请链接。
+
+邀请链接不仅可以由用户创建，也可以由机器人创建。~~这简直是废话，毕竟机器人就是一种用户。~~
+
+怎么创建邀请链接？这就要看 `InviteHolder` 了。
+
+其完全限定名为 `snw.jkook.entity.abilities.InviteHolder` 。表示一个可以创建邀请链接的对象。
+
+`Guild`，`Channel` (除了 `Category`) 都是其子类。
+
+其代码如下:
+
+```java
+public interface InviteHolder {
+
+    PageIterator<Set<Invitation>> getInvitations();
+    
+    String createInvite(int validSeconds, int validTimes);
+}
+```
+
+在这个接口下，我们能看见一个叫 `createInvite` 的方法。
+
+在参数中，前者为有效时间（单位：秒），后者为邀请链接可以被使用的次数。
+
+以下给出一些算好的有效时间的常量:
+```text
+0 => 永不
+1800 => 0.5 小时
+3600 => 1 个小时
+21600 => 6 个小时
+43200 => 12 个小时
+86400 => 1 天
+604800 => 7 天
+```
+
+以下给出一些邀请链接可用次数的常量:
+```text
+-1 => 无限制
+1 => 1 次使用
+5 => 5 次使用
+10 => 10 次使用
+25 => 25 次使用
+50 => 50 次使用
+100 => 100 次使用 
+```
+
+以上常量摘自 [KOOK 开发者文档](https://developer.kookapp.cn/doc/http/invite)。
+
+此方法的返回结果是一个邀请链接的字符串，你可以通过这个制作一些诸如通过命令获取特定频道邀请链接的功能。~~（感觉好鸡肋啊）~~
+
+获取为 `InviteHolder` 的实例创建的邀请信息，使用 `getInvitations` 方法。
+
+什么？你想问 `PageIterator` 是什么？
+
+那是我们对 KOOK HTTP API 中按分页格式设计的 API 的统一抽象。因为按分页格式设计的 API 不能一次得到所有数据，需要遍历，因此我们创建了 `PageIterator` 。
+
+就当它是一个普通的 `Iterator` 用吧。
+
+还不知道 `Iterator` 是什么？看看[这个](https://www.liaoxuefeng.com/wiki/1252599548343744/1265124784468736)？
+* 此链接来自 廖雪峰的官方网站 ，感谢作者提供的优秀文章！
 
 ### Channel
 
