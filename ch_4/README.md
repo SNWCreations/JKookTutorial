@@ -258,11 +258,25 @@ public interface InviteHolder {
 
 #### TextChannel
 
-TODO
+完整限定名为 `snw.jkook.entity.channel.TextChannel` 。
+
+表示一个文字频道。
+
+获取一个文字频道中的历史消息可以使用 `TextChannel#getMessages` 方法。使用此方法建议配合阅读[KOOK 开发者文档 - 消息](https://developer.kookapp.cn/doc/http/message)中"获取频道聊天消息列表"一节。
+
+对一个文字频道发送消息组件可以使用 `TextChannel#sendComponent` 方法。具体用法将在下章讲解。
 
 #### VoiceChannel
 
-TODO
+完整限定名为 `snw.jkook.entity.channel.VoiceChannel` 。
+
+表示一个语音频道。
+
+`VoiceChannel#getUsers` 方法可以获取由所有已加入此语音频道的用户组成的列表。
+
+`VoiceChannel#moveToHere` 方法可以将另一个语音频道中的用户移动到此语音频道。
+
+`VoiceChannel#getMaxSize` 方法可以获取此语音频道最大可以容纳的用户数。
 
 #### 特定于频道的权限
 
