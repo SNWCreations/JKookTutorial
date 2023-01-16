@@ -26,6 +26,8 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 4. `CommandExecutor`，`UserCommandExecutor`，`ConsoleCommandExecutor` 中 `onCommand` 方法的 `arguments` 参数类型从 `String[]` 变成了 `Object[]` ，关于此变动的详细讲解，见本教程[第 6 章 - 参数解析系统](ch_6/README.md#参数解析系统)。
 
+5. 移除了糟糕的 `snw.jkook.event.HandlerList` ，自定义事件不再需要写 `private static final HandlerList handlers = new HandlerList();` 以及 `public static HandlerList getHandlers()` 了。
+
 
 ## 如何迁移？
 
@@ -33,6 +35,8 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 因为 Java 有自动装/拆箱的特性，第 2 条在一般情况下可以安全忽略。
 * 反射调用的话需要修改传递给 `Class#getMethod` 方法的参数类型的 `Class` 。~~(但为什么要这么做呢？API 0.37 又不是没有这个方法)~~
+
+第 5 条，清理掉所有有关 `HandlerList` 的引用即可。
 
 ### 命令部分
 
