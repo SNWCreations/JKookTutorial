@@ -22,7 +22,10 @@
 
 若在教程文档中发现你不认识的方法或类，可以查阅 JKook API 的 Javadoc (链接在第 0 章)，或者带着疑问继续阅读后续教程(可能有些类在后文会讲)。
 
-**请确保你已经有 Java 基础 (Java 语法至少要会) ，这是编写 JKook 插件的前提。**
+**请确保你已经有 Java 基础，这是编写 JKook 插件的前提。**
+* Java 开发教程我们推荐[廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)编写的。
+* 你需要掌握：Java 基础语法，Java 基础库（如 `java.util` 包及其中包含的 Java Collection 框架），泛型等
+* 学习本教程的内容不需要你刻意学习 Java ME 或 Java EE ，Java SE 就够了。额外的，像 JDBC 数据库操作一类的请自行学习，那也不是本教程的范围。
 
 看每一个 Chapter 时，请同时打开其目录下的 README.md 及具体代码，善用你的 IDE 的分栏功能 (如果有) 。
 
