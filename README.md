@@ -68,7 +68,7 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 3 - 再看 Plugin](ch_3/README.md)
 
-Chapter 4 - 实体体系概述
+[Chapter 4 - 实体体系概述](ch_4/README.md)
 
 Chapter 5 - 消息体系概述
 
