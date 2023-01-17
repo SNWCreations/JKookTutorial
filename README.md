@@ -23,7 +23,7 @@
 若在教程文档中发现你不认识的方法或类，可以查阅 JKook API 的 Javadoc (链接在第 0 章)，或者带着疑问继续阅读后续教程(可能有些类在后文会讲)。
 
 **请确保你已经有 Java 基础，这是编写 JKook 插件的前提。**
-* Java 开发教程我们推荐[廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)编写的。
+* Java 开发教程我们推荐[廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)编写的。但其教程始终基于最新版 Java 编写，而我们在 Java 8 ，故可能有些新版本的语法在 Java 8 中不可用。具体的区别请自行辨析。若需要使用更高版本的 Java ，则运行 KookBC 时将需要使用对应版本的 JRE 。更多内容详见[第 1 章 - 配置 KookBC 以用于调试 部分](ch_1/README.md#配置 KookBC 以用于调试)。
 * 你需要掌握：Java 基础语法，Java 基础库（如 `java.util` 包及其中包含的 Java Collection 框架），泛型等
 * 学习本教程的内容不需要你刻意学习 Java ME 或 Java EE ，Java SE 就够了。额外的，像 JDBC 数据库操作一类的请自行学习，那也不是本教程的范围。
 
