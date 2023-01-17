@@ -63,8 +63,6 @@ snw.jkook.entity
 
 ## 具体元素
 
-先从一些大概念讲起。顺带讲讲其中一些有用的方法。
-
 ### User
 
 完整限定名为 `snw.jkook.entity.User` 。
@@ -339,8 +337,60 @@ public interface Channel {
 
 ### CustomEmoji
 
-TODO
+完整限定名为 `snw.jkook.entity.CustomEmoji` 。
+
+表示一个表情（也可以直接称作 Emoji）。
+
+其 ID 可以通过 `CustomEmoji#getId` 方法获取。
+
+它可以是:
+
+![](images/7.png)
+
+这些由 KOOK 提供的自带 Emoji 。下文称之为 "KOOK 原生 Emoji"。
+
+也可以是:
+
+![](images/8.png)
+
+这种由服务器管理员上传的 Emoji 。
+
+获取一个服务器的 Emoji 列表可以使用 `Guild#getCustomEmojis` 方法。
+
+获取 KOOK 原生 Emoji 的方法如下。
+
+到 [KOOK 原生 Emoji 列表 - Kook.Net 文档](https://kooknet.dev/guides/emoji/emoji-list.html) 查询你需要的 Emoji ，获得其 Unicode 码，然后使用 `snw.jkook.Unsafe#getCustomEmoji` 方法获得其具体实例。
+* 如 `:smile:` 表情的 Unicode 码为 `\ud83d\ude04` 。
+
+![](images/9.png)
+
+上图中，向左箭头指向的是 Unicode 码，向右箭头指向的是短代码，用于包含在 Markdown 消息组件中实现发送带 Emoji 的消息。
+
+获取 KOOK 原生 Emoji 的大致代码如下:
+```java
+String emojiUnicode = "";
+snw.jkook.Unsafe unsafe; // 具体获取 Unsafe 的代码已忽略。
+                         // 如可以使用 JKook.getUnsafe()
+                         // 高版本可以用 Plugin.getCore().getUnsafe()
+snw.jkook.entity.CustomEmoji emoji = unsafe.getCustomEmoji(emojiUnicode);
+```
+
+`CustomEmoji` 一般配合 `MarkdownComponent`（Markdown 消息组件，下一章会讲），实现机器人发送服务器表情的功能。
+
+也可以用于 `Message#sendReaction` 方法，将 Emoji 作为对消息的回应发出。
 
 ### Reaction
 
-TODO
+完整限定名为 `snw.jkook.entity.Reaction` 。
+
+表示对消息的回应。
+
+这个也会在下一章讲解。
+
+---
+
+至此，本章结束了。
+
+了解 JKook API 的实体体系，是你编写 JKook 插件的关键。
+
+请务必反复仔细阅读本章。
