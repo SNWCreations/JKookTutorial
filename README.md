@@ -6,7 +6,7 @@
 
 通过阅读此仓库的文档，你将了解 JKook API 中的各种类，从而帮助你开发 JKook 插件。
 
-若需要从 JKook API 0.37 迁移到 API 0.44 ，见[这篇教程](Migrate_To_0.44.md)。
+若需要从 JKook API 0.37 迁移到 API 0.45 ，见[这篇教程](Migrate_To_0.45.md)。
 
 ## 观前提示
 
