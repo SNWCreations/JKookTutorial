@@ -1,4 +1,4 @@
-# 从 API 0.37 迁移到 API 0.43
+# 从 API 0.37 迁移到 API 0.44
 
 最新的版本有最新的修补与功能。
 
@@ -14,7 +14,7 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 但是，在 API 0.38 中发生了与这条原则不符的事情: 我们重构了命令系统，加入了一些新功能，因此推翻了旧代码。
 
-所以你在 API 0.37 上编写的命令直接拿到 API 0.43 的实现上是无法运行的。
+所以你在 API 0.37 上编写的命令直接拿到 API 0.44 的实现上是无法运行的。
 
 ## 两个 API 版本之间不兼容的内容
 
@@ -28,6 +28,8 @@ JKook API 有一条设计原则: 尽量向下兼容。
 
 5. 移除了糟糕的 `snw.jkook.event.HandlerList` ，自定义事件不再需要写 `private static final HandlerList handlers = new HandlerList();` 以及 `public static HandlerList getHandlers()` 了。
 
+6. `UserClickButtonEvent#getChannel` 方法现在直接返回 `TextChannel` 的实例。
+
 
 ## 如何迁移？
 
@@ -37,6 +39,8 @@ JKook API 有一条设计原则: 尽量向下兼容。
 * 反射调用的话需要修改传递给 `Class#getMethod` 方法的参数类型的 `Class` 。~~(但为什么要这么做呢？API 0.37 又不是没有这个方法)~~
 
 第 5 条，清理掉所有有关 `HandlerList` 的引用即可。
+
+第 6 条，清除 `UserClickButtonEvent` 的监听器中对 `Channel` 的向下转型即可。
 
 ### 命令部分
 
