@@ -118,9 +118,76 @@ snw.jkook.message
 
 在一条消息被删除后，对其对应的消息对象进行更新等操作将失败，因此，已被删除的消息的消息对象不再具有可用性。
 
+`TextChannelMessage` 主要提供了更多的功能，如向频道发送一个临时消息的快捷封装，以及获取消息所在的文字频道。
+
 ## 消息组件
 
 TODO
+
+## 发送消息
+
+通常地，向一个文字频道发送一个消息组件只需要使用 `TextChannel#sendComponent` 方法即可。
+
+向一个用户的私信发送一个消息组件？使用 `User#sendPrivateMessage` 方法即可。
+
+### 回复消息
+
+回复消息有两种方式。
+
+1. 获取消息的来源（在私信中指用户，在文字频道中就是文字频道本身），然后调用相应的发送消息的方法
+2. 直接使用 `Message#reply` 。
+
+使用第一个方法可以这么写:
+```java
+BaseComponent component;
+Message message;
+if (message instanceof TextChannelMessage) {
+    ((TextChannelMessage) message).getChannel().sendComponent(component, message, null);    
+} else {
+    message.getSender().sendPrivateMessage(component, message);
+}
+```
+
+但这种方法如果想要大量使用必须封装，否则会造成很多重复代码。
+
+但是，第二个方法是由 API 直接提供封装。
+
+只需要一行代码:
+```java
+message.reply(component);
+```
+
+### 发送消息到消息来源
+
+如果你不想要那个回复的框框...
+
+![](images/1.png)
+
+对，就是红框里的那个。
+_~~请不要在意内容。~~_
+
+你可以使用另一个由 `Message` 提供的便利方法: `Message#sendToSource` 。
+
+只需要一行代码:
+```java
+message.sendToSource(component);
+```
+
+### 临时消息
+
+这是一个神奇的东西。
+
+一个临时消息具有如下特性：
+* 只能出现在文字频道中
+* 仅有指定的用户可以看见
+* 临时消息会在指定的用户在重启 TA 的 KOOK 客户端后消失
+* 不可更新
+
+因为第一条特性，发送一个临时消息需要将 `Message` 转为 `TextChannelMessage` 然后再调用相关方法。
+
+我们支持回复消息的同时把消息作为临时消息，也支持直接发生到消息来源的同时设置为临时消息。
+
+对于前者的情况，使用 `TextChannelMessage#replyTemp` 方法，对于后者的情况，使用 `TextChannelMessage#sendToSourceTemp` 方法。
 
 ## CardMessage
 
