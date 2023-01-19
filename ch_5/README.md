@@ -122,7 +122,25 @@ snw.jkook.message
 
 ## 消息组件
 
-TODO
+消息组件（英文 `Component`）一词同样借鉴于游戏 Minecraft ，用于存放消息的内容。
+* _为什么实体和消息组件的名称都借鉴于 Minecraft ？因为 JKook 的作者就是个 Minecraft 玩家。_
+
+JKook API 中的消息组件全部放在了 `snw.jkook.message.component` 包下。
+
+`BaseComponent` 为消息组件的顶级父类。
+
+`TextComponent` 为纯文本消息组件。
+* **KOOK 官方已经弃用纯文本消息。** 所有的纯文本消息会在 KOOK 的服务端转换为 Markdown 之后再发送。
+
+`MarkdownComponent` 为 Markdown 消息组件。继承自 `TextComponent` 类。
+
+`FileComponent` 表示一个文件消息组件。
+
+`FileComponent` 类下提供了一个 `Type` 枚举，表明文件的类型，支持 `AUDIO`（音乐），`VIDEO`（视频），`IMAGE`（图片），`FILE`（普通文件）。
+
+你可以根据文件的类型，在构造它的时候指定类型。不同的类型在 KOOK 客户端中渲染的效果不一样。
+
+**发送音乐文件时更推荐使用卡片消息中的 `FileModule` ，可以指定封面图片。**
 
 ## 发送消息
 
