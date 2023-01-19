@@ -70,7 +70,7 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 4 - 实体体系概述](ch_4/README.md)
 
-Chapter 5 - 消息体系概述
+[Chapter 5 - 消息体系概述](ch_5/README.md)
 
 [Chapter 6 - 命令系统概述](ch_6/README.md)
 
