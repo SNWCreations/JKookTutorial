@@ -80,7 +80,9 @@ Chapter 8 - 任务调度系统
 
 Chapter 9 - 其余类概述
 
-Chapter 10 - 终章！动手实践！
+Chapter 10 - 一些有用的小技巧
+
+Chapter 11 - 终章！动手实践！
 
 ## 贡献
 
