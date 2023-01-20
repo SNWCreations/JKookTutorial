@@ -74,9 +74,9 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 6 - 命令系统概述](ch_6/README.md)
 
-Chapter 7 - 事件体系概述
+[Chapter 7 - 事件体系概述](ch_7/README.md)
 
-Chapter 8 - 任务调度系统
+[Chapter 8 - 任务调度系统](ch_8/README.md)
 
 Chapter 9 - 其余类概述
 
