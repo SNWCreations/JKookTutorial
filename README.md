@@ -78,11 +78,9 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 8 - 任务调度系统](ch_8/README.md)
 
-Chapter 9 - 其余类概述
+[Chapter 9 - 进阶内容](ch_9/README.md)
 
-Chapter 10 - 一些有用的小技巧
-
-Chapter 11 - 终章！动手实践！
+Chapter 10 - 终章！动手实践！
 
 ## 贡献
 
