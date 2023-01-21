@@ -10,7 +10,7 @@
 
 编译，运行，看看效果？
 
-效果是: 在你发送 `/notice` 命令后，每经过 1 分钟，向你发送一条私信，内容是 `I'm the task in the scheduler!` 。
+效果是: 在你发送 `/notice` 命令后，每经过 1 分钟，机器人会向你发送一条私信，内容是 `I'm the task in the scheduler!` 。
 
 ## 内容详情
 
