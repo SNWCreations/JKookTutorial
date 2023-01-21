@@ -110,18 +110,6 @@ public static ConfigurationSerializable deserialize(Map<String, Object> data) {
 }
 ```
 
-在实际的开发中，我更推荐这么写:
-
-```java
-public static ConfigurationSerializable deserialize(Map<String, Object> data) {
-    String name = data.get("name").toString();
-    if (name.startsWith("another")) { // 专门用于匹配 AnotherDataObj 的条件
-        return new AnotherDataObj(data); // 这里传了 data 给构造方法，方便它按自己的需要获取数据
-    }
-    return new DataObj(name);
-}
-```
-
 这个注解的好处是可以避免写大量的 `deserialize` 方法，只需要按照特定条件去检查即可。
 
 但过量使用容易导致被指定的类的反序列化方法太过复杂。
