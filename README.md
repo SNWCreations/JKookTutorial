@@ -58,8 +58,6 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 ## 目录
 
-* 无链接的为目前尚未编写或未完工的章节。**您可以参与编写！**
-
 [Chapter 0 - JKook API 介绍](ch_0/README.md)
 
 [Chapter 1 - Hello World!](ch_1/README.md)
@@ -80,13 +78,11 @@ KookBC 的使用方法可以在[其仓库](https://github.com/SNWCreations/KookB
 
 [Chapter 9 - 进阶内容](ch_9/README.md)
 
-Chapter 10 - 终章！动手实践！
+[Chapter 10 - 终章！动手实践！](ch_10/README.md)
 
 ## 贡献
 
 啊！我很高兴你愿意为此教程做出贡献！
-
-目前，文档还未完成，我也只是写了大纲，如果你知道应该写什么，Fork 此仓库，笔就在你手上了，开始写吧！写完提一个 PR ，我会看的。
 
 对于教程内容的错误，你可以在 Issue 中提出，或者直接 PR 提交你的修改！
 
