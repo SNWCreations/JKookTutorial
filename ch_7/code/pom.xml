@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.github.SNWCreations</groupId>
             <artifactId>JKook</artifactId>
-            <version>0.46.2</version>
+            <version>0.47.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
