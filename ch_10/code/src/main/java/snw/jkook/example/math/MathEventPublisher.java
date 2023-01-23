@@ -65,11 +65,21 @@ public class MathEventPublisher extends JKookRunnable implements Listener {
                 }
             }
         };
-        Main.getInstance().getCore().getEventManager().registerHandlers(Main.getInstance(), l);
+        tempListener(l);
     }
 
     public void start() {
         runTaskTimer(Main.getInstance(), TimeUnit.MINUTES.toMillis(10), TimeUnit.MINUTES.toMillis(10));
         Main.getInstance().getCore().getEventManager().registerHandlers(Main.getInstance(), this);
+    }
+
+    private static void tempListener(Listener listener) {
+        Main.getInstance().getCore().getEventManager().registerHandlers(Main.getInstance(), listener);
+        new JKookRunnable() {
+            @Override
+            public void run() {
+                Main.getInstance().getCore().getEventManager().unregisterHandlers(listener);
+            }
+        }.runTaskLater(Main.getInstance(), TimeUnit.MINUTES.toMillis(1L));
     }
 }
