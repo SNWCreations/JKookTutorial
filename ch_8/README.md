@@ -39,6 +39,8 @@ JKook API 的任务调度系统位于 `snw.jkook.scheduler` 包下。
 所有发布任务的方法都需要 `Plugin` 实例。
 * 在 API 0.37 中，`runTask` 方法不需要 `Plugin` 实例，但是在高版本中需要，还请注意。
 
+**这里提供的所有 `runTaskXXX` 方法的时间单位为毫秒。下文将要提及的 `JKookRunnable` 同理。**
+
 ## Task
 
 其完整限定名为 `snw.jkook.scheduler.Task` 。
