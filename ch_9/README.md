@@ -87,7 +87,7 @@ _本章可以选择性阅读，你可以直接跳到下一章。_
 ConfigurationSerialization.registerClass(DataObj.class);
 ```
 
-其中，`DataObj` 类是一个 `ConfigurationSerializable` 的实现。
+在这个示例中，`DataObj` 类是一个 `ConfigurationSerializable` 的实现。
 
 ### DelegateDeserialization
 
