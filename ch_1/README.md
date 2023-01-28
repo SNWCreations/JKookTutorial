@@ -112,7 +112,7 @@ Java 运行时环境可以在以下地址下载:
 
 JKook API 0.37.x 对应 KookBC 0.17.x 。
 
-JKook API 0.47.x 对应 KookBC 0.25.x 。
+JKook API 0.48.x 对应 KookBC 0.25.x 。
 
 下载对应版本的最新版本，以保证得到最新的漏洞修补。
 
