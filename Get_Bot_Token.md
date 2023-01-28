@@ -29,3 +29,7 @@
 * 写进将被公开的代码
 
 若有不慎泄露(如在开发时遇到问题需要求助却不小心在截图中包含了没有打码的 Token)，在后台的 Token 框右侧有 "重置" 按钮，请毫不犹豫的按下去，然后用新 Token 替换你环境中的旧 Token。
+
+---
+
+本文编写时参考了 [khl.py Example - 引言](https://github.com/TWT233/khl.py/blob/main/example/README.md) ，在此表示感谢。
