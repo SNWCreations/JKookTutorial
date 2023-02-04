@@ -98,8 +98,8 @@ public class Scoreboard implements ConfigurationSerializable {
     // Utility methods:
 
     // format:
-    // [0] -> current level
-    // [1] -> the score needed to next level
+    // [0] -> current level (int)
+    // [1] -> the score needed to next level (double)
     // [2] -> the point of the next level (double)
     public static Number[] scoreToLevel(int score) {
         if (score < FIRST_LEVEL) {
