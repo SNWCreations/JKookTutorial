@@ -22,9 +22,10 @@ JKook 是一个面向 Java 平台的，对 KOOK API 进行了封装的 API 项�
 
 有问题就来这问问吧！
 
-[JKook API Javadoc (0.37 LTS)](https://jitpack.io/com/github/SNWCreations/JKook/0.37.6/javadoc/)
-
 [JKook API Javadoc (最新 API)](https://jitpack.io/com/github/SNWCreations/JKook/latest/javadoc)
+
+~~[JKook API Javadoc (0.37)](https://jitpack.io/com/github/SNWCreations/JKook/0.37.6/javadoc/)~~
+* API 0.37 已经过时。
 
 善用 Javadoc ，在遇到不知道用法的方法时去看看！
 

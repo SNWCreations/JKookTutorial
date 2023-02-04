@@ -39,7 +39,7 @@ public class Main extends BasePlugin {
                         message.reply(new MarkdownComponent(contentBuilder.toString()));
                     }
                 })
-                .register();
+                .register(this);
 
         // This command can just delete your message.
         new JKookCommand("deleteme")
@@ -50,7 +50,7 @@ public class Main extends BasePlugin {
                         message.reply(new MarkdownComponent("我无法删除你的消息。lol"));
                     }
                 })
-                .register();
+                .register(this);
     }
 
 }

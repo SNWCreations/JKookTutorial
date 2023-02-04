@@ -29,7 +29,7 @@ public class Main extends BasePlugin {
 
                     message.reply(new MarkdownComponent(replyContent.toString()));
                 })
-                .register();
+                .register(this);
     }
 
 }
