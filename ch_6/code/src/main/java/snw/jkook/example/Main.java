@@ -80,6 +80,7 @@ public class Main extends BasePlugin {
                                     }
                                     if (arguments.length == 0) {
                                         message.reply(new MarkdownComponent("No name?"));
+                                        return; // there is no argument available, we should return
                                     }
                                     // In JKook API 0.37 (and before), the result of arguments[0] is a String.
                                     // But in JKook API 0.38+, the result is Object.
