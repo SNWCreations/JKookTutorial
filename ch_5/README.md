@@ -1,8 +1,8 @@
 # Chapter 5
 
-在你阅读上一章的时候，你应该注意到了我们提到了几次 `Message` ，那就是我们对 KOOK 消息的抽象接口。
+在你阅读上一章的时候，你应该注意到我们提了几次 `Message` ，那就是我们对 KOOK 消息的抽象接口。
 
-本章，我们来讲解 JKook API 的消息体系。
+本章，我们讲讲 JKook API 的消息体系。
 
 ## 运行一次示例
 
@@ -199,9 +199,10 @@ message.sendToSource(component);
 * 临时消息会在指定的用户在重启 TA 的 KOOK 客户端后消失
 * 不可更新
 
-因为第一条特性，发送一个临时消息需要将 `Message` 转为 `TextChannelMessage` 然后再调用相关方法。
+因为第一条特性，发送一个临时消息需要将 `Message` 对象转为 `TextChannelMessage` 对象，然后再调用相关方法。
+* 请务必先对消息对象进行 `instanceof` 检查。 **永远不要做未经检查的向下转换。**
 
-我们支持回复消息的同时把消息作为临时消息，也支持直接发生到消息来源的同时设置为临时消息。
+我们支持回复消息的同时把消息作为临时消息，也支持直接发送到消息来源的同时设置为临时消息。
 
 对于前者的情况，使用 `TextChannelMessage#replyTemp` 方法，对于后者的情况，使用 `TextChannelMessage#sendToSourceTemp` 方法。
 
