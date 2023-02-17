@@ -223,14 +223,14 @@ JKook API 中关于 CardMessage 的内容放在了 `snw.jkook.message.component.
 
 这里先讲解几个重要的类： `CardComponent`，`MultipleCardComponent`，`Theme`，`Size` 以及 `CardBuilder` 。
 
-`CardComponent` 表示单个卡片。
+`CardComponent` 表示单个卡片组件。
 
 `MultipleCardComponent` 是一个可存放最多 5 张卡片的容器组件。
 
 `Theme` 枚举列出了 KOOK 支持的几种 "风格" ，它可以影响卡片本身以及特定元素的颜色。
 
 `Size` 枚举存放了 Bootstrap 中的 4 种栅格布局。
-* 卡片本身仅支持 `LG` 与 `SM` 。剩余的是为卡片模块准备的。
+* 卡片本身仅支持 `LG` 与 `SM` 。剩余的是为卡片模块准备的。如果你不知道卡片使用什么大小好，那就去用 `LG` 吧。
 * 卡片本身在移动端 KOOK 只会使用 `SM` 大小。
 * Bootstrap 是前端框架，不在本教程范围中，只是 KOOK 用到了，故此处不作详细讲解。
 
