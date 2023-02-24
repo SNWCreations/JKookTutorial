@@ -307,7 +307,7 @@ snw.jkook.entity.TextChannel
 
 `User` 的解析器通过解析 [KMarkdown](https://developer.kookapp.cn/doc/kmarkdown) 中的 `(met)` 标签实现。它在 KOOK 客户端中的表现是 `@某人` 。
 
-`TextChannel` 的解析器通过解析 [KMarkdown](https://developer.kookapp.cn/docs/kmarkdown) 中的 `(chn)` 标签实现。它在 KOOK 客户端中的表现是 `#某频道` 。
+`TextChannel` 的解析器通过解析 [KMarkdown](https://developer.kookapp.cn/doc/kmarkdown) 中的 `(chn)` 标签实现。它在 KOOK 客户端中的表现是 `#某频道` 。
 
 ---
 
