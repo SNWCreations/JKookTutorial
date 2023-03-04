@@ -42,7 +42,7 @@ public class PermissionStorage {
     }
     
     public static void update(Role role) {
-        Collection<Integer> c = map.get(role.getGuild().getId());
+        Collection<Integer> c = map.computeIfAbsent(role.getGuild().getId(), i -> new ArrayList<Integer>());
         if (role.isPermissionSet(Permission.MESSAGE_MANAGE)) {
             c.add(role.getId());
         } else {
