@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.github.SNWCreations</groupId>
             <artifactId>JKook</artifactId>
-            <version>0.48.1</version>
+            <version>0.48.2</version>
             <scope>provided</scope>
         </dependency>
         <!-- The JavaScript Engine Support -->
