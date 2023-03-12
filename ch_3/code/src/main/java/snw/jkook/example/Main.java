@@ -48,7 +48,7 @@ public class Main extends BasePlugin {
 
         saveResource("hello.txt", false, false); /* 5 */
 
-        getLogger().info("Go to {}, a surprise is appeared at there!", getDataFolder()); /* 6 */
+        getLogger().info("Go to {}, a surprise is appeared there!", getDataFolder()); /* 6 */
     }
 
     @Override
