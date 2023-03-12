@@ -110,7 +110,7 @@ Java 运行时环境可以在以下地址下载:
 
 请打开 [KookBC Releases](https://github.com/SNWCreations/KookBC/releases) 页面，下载你需要的 KookBC 版本。
 
-JKook API 0.48.x 对应 KookBC 0.25.x 。
+JKook API 0.48.x 对应 KookBC 0.25.x 及以上版本。
 
 ~~JKook API 0.37.x 对应 KookBC 0.17.x 。~~
 * **API 0.37 已经过时。** 推荐使用最新版本 API ，后面的教程也都采用最新版本。
