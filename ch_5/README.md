@@ -89,6 +89,13 @@ snw.jkook.message
 
 或者通过命令系统，`CommandExecutor` 和 `UserCommandExecutor` 接口的 `onCommand` 方法均提供了 `Message` 对象，表示导致命令被执行的消息对象。
 
+自 API 0.49.0 开始，你可以拿着消息 ID 直接去 `HttpAPI` 接口获取完整消息信息了。
+
+查询文字频道消息用 `HttpAPI#getTextChannelMessage` 方法。
+
+查询私聊消息信息用 `HttpAPI#getPrivateMessage` 方法。
+* 注意，此方法另外需要用户对象。
+
 ## 消息对象
 
 消息对象目前有两种：`TextChannelMessage` 和 `PrivateMessage` 。它们有一个共同的父类是 `Message` 接口。

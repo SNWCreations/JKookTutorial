@@ -136,6 +136,24 @@ snw.jkook.entity
 
 _~~也许你可以利用这个系统制作一个可以培养好感度的机器人？？？？？哦，这个想法太怪了。~~_
 
+#### 好友系统
+
+感谢 [DeeChael](https://github.com/DeeChael) 发掘的好友系统 API 。
+
+这部分 API 加入于 API 0.49.0 。
+
+你的机器人可以和普通用户成为好友了！
+
+相关方法放在 `HttpAPI` 中，但是因为这些方法与用户联系更为密切，所以我们放在这里来讲。
+
+`HttpAPI#getFriendState` 方法可以让你获取当前机器人账号下的好友列表状态，它只是一个快照，这意味着当你需要最新数据时，你应该调用此方法重新请求数据。
+
+`HttpAPI#addFriend` 方法可以让你向指定用户发出一个好友请求。
+
+`HttpAPI#deleteFriend` 方法可以让你删除一个好友。
+
+`HttpAPI#handleFriendRequest` 方法与 `HttpAPI.FriendRequest#handle` 效果一致，决定是否同意好友请求。
+
 ### Guild
 
 完整限定名为 `snw.jkook.entity.Guild` 。
@@ -187,6 +205,7 @@ public static int remove(int sum, Permission perm) {
 
 `remove` 方法为从给定的权限值中移除指定权限。
 
+(这些工具代码已经在最新的 API 0.49.0 里提供。)
 
 #### Role
 
@@ -218,7 +237,7 @@ public static int remove(int sum, Permission perm) {
 
 其完全限定名为 `snw.jkook.entity.abilities.InviteHolder` 。表示一个可以创建邀请链接的对象。
 
-`Guild`，`Channel` (除了 `Category`) 都是其子类。
+`Guild`，`NonCategoryChannel` 都是其子类。
 
 其代码如下:
 
@@ -280,8 +299,12 @@ public interface InviteHolder {
 
 获取一些常规属性的方法（如名称对应 `getName` 方法，ID 对应 `getId` 方法）这里就不多讲了。
 
-`Channel#getParent` 方法可以获取频道的父分组频道对象。
-* 有对应的 `Channel#setParent` 方法可以修改。
+~~`Channel#getParent` 方法可以获取频道的父分组频道对象。~~
+
+~~有对应的 `Channel#setParent` 方法可以修改。~~
+
+* 自 API 0.49.0 开始，因为 `Category` 不可能有父分组，所以将与父分组有关的方法移到了新接口 `NonCategoryChannel` 。
+* 如果你需要调用相关方法，请自行向下转型。
 
 #### Category
 
@@ -299,7 +322,21 @@ public interface InviteHolder {
 
 ![](images/6.png)
 
-**另外注意，来自 `InviteHolder` 接口的方法以及 `Channel#getParent`、`Channel#setParent` 方法在 `Category` 接口中不可用。**
+**另外注意，来自 `InviteHolder` 接口的方法以及 `Channel#getParent`、`Channel#setParent` 方法在 `Category` 接口中不可用，因为它不是 `NonCategoryChannel` 。**
+
+#### NonCategoryChannel
+
+完全限定名为 `snw.jkook.entity.channel.NonCategoryChannel` 。
+
+加入于 API 0.49.0 。
+
+表示一个"不是分组"的频道，设计它是为了将一些在 API 0.48 及以前对分组完全不可用的功能剥离出来。
+
+是 `InviteHolder` 的子类，这意味着有关邀请链接的方法对此接口可用。
+
+是 `ParentHolder` (`snw.jkook.entity.abilities.ParentHolder`) 的子类，这意味着与父分组有关的方法 (`getParent`, `setParent` 方法) 对此接口可用。
+
+`TextChannel` 与 `VoiceChannel` 都是其子类。
 
 #### TextChannel
 
