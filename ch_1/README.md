@@ -79,7 +79,7 @@ DEBUG - 调试 (一般用于记录程序的正常运行过程中的细节)
 
 **为什么这么做？**
 
-到后面的教程中，你会发现有些方法需要 `Plugin` 的实例，而这时就需要一个方法将你的插件实例传递给这些方法。
+在后面的教程中，你会发现有些方法需要 `Plugin` 的实例，而这时就需要一个方法将你的插件实例传递给这些方法。
 
 通过 `public static` 方法在哪都能调用的特性，我们可以轻松解决这个问题。
 
@@ -110,7 +110,7 @@ Java 运行时环境可以在以下地址下载:
 
 请打开 [KookBC Releases](https://github.com/SNWCreations/KookBC/releases) 页面，下载你需要的 KookBC 版本。
 
-JKook API 0.48.x 对应 KookBC 0.25.x 。
+JKook API 0.48.x 对应 KookBC 0.25.x 及以上版本。
 
 ~~JKook API 0.37.x 对应 KookBC 0.17.x 。~~
 * **API 0.37 已经过时。** 推荐使用最新版本 API ，后面的教程也都采用最新版本。
