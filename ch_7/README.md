@@ -133,7 +133,7 @@ public class MyListener implements Listener {
 }
 ```
 
-写给从 Bukkit 迁移而来的开发者: JKook API 提供的所有事件均无法取消。不同于 Bukkit 优先于 Minecraft Server 所以可以修改事件，KOOK 的事件是在发生后才推送给机器人。也正因为这个，我们认为没有必要编写监听器优先级系统，故 `EventHandler` 没有 `priority` 属性。
+写给 Bukkit 开发者: JKook API 提供的所有事件均无法取消。不同于 Bukkit 优先于 Minecraft Server 所以可以修改事件，KOOK 的事件是在发生后才推送给机器人。也正因为这个，我们认为没有必要编写监听器优先级系统，故 `EventHandler` 没有 `priority` 属性。
 
 ## 监听事件
 

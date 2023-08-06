@@ -54,7 +54,7 @@ JKook API 的任务调度系统位于 `snw.jkook.scheduler` 包下。
 
 ## JKookRunnable
 
-写给从 Bukkit 迁移而来的开发者: 这个名字很眼熟？是的，它复刻了 `BukkitRunnable` ！
+写给 Bukkit 开发者: 这个名字很眼熟？是的，它复刻了 `BukkitRunnable` ！
 
 其完整限定名为 `snw.jkook.scheduler.JKookRunnable` 。
 
