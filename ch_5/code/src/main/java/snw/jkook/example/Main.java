@@ -21,9 +21,16 @@ public class Main extends BasePlugin {
                         contentBuilder.append("消息 ID: ").append(messageId).append("\n");
                         contentBuilder.append("消息发送时的时间戳: ").append(timestamp);
 
+                        // when in JKook API version 0.51.0 and later, you should use "ChannelMessage" instead of "TextChannelMessage"
+                        // because KOOK can type in voice channels
+                        // eg: if (message instanceof ChannelMessage) { }
                         if (message instanceof TextChannelMessage) { // if this command was executed in a channel
                             contentBuilder.append("\n"); // ignore this please, just for better look
 
+                            // because KOOK's message events don't carry channel types
+                            // so when you use JKook API version 0.51.0 +
+                            // you should use NonCategoryChannel instead of TextChannel
+                            // eg: NonCategoryChannel channel = ((ChannelMessage) message).getChannel();
                             TextChannel channel = ((TextChannelMessage) message).getChannel();
                             Guild guild = channel.getGuild();
                             String guildName = guild.getName();
@@ -44,6 +51,7 @@ public class Main extends BasePlugin {
         // This command can just delete your message.
         new JKookCommand("deleteme")
                 .executesUser((sender, arguments, message) -> {
+                    // use ChannelMessage instead of TextChannelMessage in 0.51.0 +
                     if (message instanceof TextChannelMessage) {
                         message.delete();
                     } else if (message instanceof PrivateMessage) { // You can't delete messages in private chat
