@@ -21,14 +21,15 @@ public class Main extends BasePlugin {
                         contentBuilder.append("消息 ID: ").append(messageId).append("\n");
                         contentBuilder.append("消息发送时的时间戳: ").append(timestamp);
 
-                        // when in JKook API version 0.51.0 and later, you should use "ChannelMessage" instead of "TextChannelMessage"
-                        // because KOOK can type in voice channels
+                        // In JKook API version 0.51.0 and later,
+                        // you should use "ChannelMessage" instead of "TextChannelMessage"
+                        // because KOOK allows typing in voice channels.
                         // eg: if (message instanceof ChannelMessage) { }
                         if (message instanceof TextChannelMessage) { // if this command was executed in a channel
                             contentBuilder.append("\n"); // ignore this please, just for better look
 
-                            // because KOOK's message events don't carry channel types
-                            // so when you use JKook API version 0.51.0 +
+                            // Since KOOK's message events don't specify channel types,
+                            // when using JKook API version 0.51.0 and later,
                             // you should use NonCategoryChannel instead of TextChannel
                             // eg: NonCategoryChannel channel = ((ChannelMessage) message).getChannel();
                             TextChannel channel = ((TextChannelMessage) message).getChannel();
